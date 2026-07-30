@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "postsyncer": {
+      "type": "http",
+      "url": "https://postsyncer.com/mcp"
+    }
+  }
+}

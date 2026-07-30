@@ -1,0 +1,20 @@
+{
+  "name": "postsyncer",
+  "owner": {
+    "name": "PostSyncer",
+    "email": "support@postsyncer.com"
+  },
+  "metadata": {
+    "description": "PostSyncer social media scheduling and analytics plugin for Claude",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "postsyncer",
+      "description": "Social media scheduling and analytics from Claude: create, schedule, and repeat posts across X, Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, and Telegram; manage media, campaigns, labels, comments, and performance analytics via the PostSyncer MCP server",
+      "source": "./",
+      "category": "productivity",
+      "strict": false
+    }
+  ]
+}
