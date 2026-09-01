@@ -1,6 +1,6 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-  "name": "io.github.postsyncer/postsyncer",
+  "name": "io.github.PostSyncer/postsyncer",
   "title": "PostSyncer",
   "description": "Schedule, publish, and analyze social media posts across 11 platforms from any MCP client.",
   "repository": {

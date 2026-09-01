@@ -39,7 +39,7 @@ gemini extensions install https://github.com/PostSyncer/claude-plugin
 
 ### Any MCP client
 
-Point your client at `https://postsyncer.com/mcp` (Streamable HTTP). The server is published in the [official MCP Registry](https://registry.modelcontextprotocol.io) as `io.github.postsyncer/postsyncer`.
+Point your client at `https://postsyncer.com/mcp` (Streamable HTTP). The server is published in the [official MCP Registry](https://registry.modelcontextprotocol.io) as `io.github.PostSyncer/postsyncer`.
 
 ### Grok Build
 
