@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.postsyncer/postsyncer",
   "title": "PostSyncer",
-  "description": "Schedule, publish, and analyze social media posts across X, Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, and Telegram.",
+  "description": "Schedule, publish, and analyze social media posts across 11 platforms from any MCP client.",
   "repository": {
     "url": "https://github.com/PostSyncer/claude-plugin",
     "source": "github"
