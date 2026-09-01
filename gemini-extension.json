@@ -1,0 +1,10 @@
+{
+  "name": "postsyncer",
+  "version": "1.0.1",
+  "description": "Social media scheduling and analytics: create, schedule, and repeat posts across X, Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, and Telegram; manage media, campaigns, labels, comments, and performance analytics via the PostSyncer MCP server.",
+  "mcpServers": {
+    "postsyncer": {
+      "httpUrl": "https://postsyncer.com/mcp"
+    }
+  }
+}

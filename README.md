@@ -23,6 +23,24 @@ claude plugin install postsyncer@postsyncer
 
 Install from the [Cursor Marketplace](https://cursor.com/marketplace), or clone this repo into `~/.cursor/plugins/local/postsyncer` and run **Developer: Reload Window**. The manifest lives in `.cursor-plugin/plugin.json`.
 
+### Codex
+
+```bash
+codex plugin marketplace add PostSyncer/claude-plugin
+```
+
+The Codex manifest lives in `.codex-plugin/plugin.json`; the plugin is also listed in the ChatGPT/Codex plugin directory as **PostSyncer**.
+
+### Gemini CLI
+
+```bash
+gemini extensions install https://github.com/PostSyncer/claude-plugin
+```
+
+### Any MCP client
+
+Point your client at `https://postsyncer.com/mcp` (Streamable HTTP). The server is published in the [official MCP Registry](https://registry.modelcontextprotocol.io) as `io.github.postsyncer/postsyncer`.
+
 ### Grok Build
 
 Install from the [xAI plugin marketplace](https://github.com/xai-org/plugin-marketplace) (`postsyncer`). The Claude-format manifest in `.claude-plugin/plugin.json` is used as-is.

@@ -1,0 +1,18 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.postsyncer/postsyncer",
+  "title": "PostSyncer",
+  "description": "Schedule, publish, and analyze social media posts across X, Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, and Telegram.",
+  "repository": {
+    "url": "https://github.com/PostSyncer/claude-plugin",
+    "source": "github"
+  },
+  "websiteUrl": "https://postsyncer.com",
+  "version": "1.0.1",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://postsyncer.com/mcp"
+    }
+  ]
+}
