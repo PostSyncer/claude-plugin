@@ -1,0 +1,25 @@
+{
+  "name": "postsyncer",
+  "version": "1.0.1",
+  "description": "Social media scheduling and analytics from Cursor: create, schedule, and repeat posts across X, Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, and Telegram; manage media, campaigns, labels, comments, and performance analytics via the PostSyncer MCP server",
+  "author": {
+    "name": "PostSyncer",
+    "email": "support@postsyncer.com"
+  },
+  "homepage": "https://docs.postsyncer.com",
+  "repository": "https://github.com/PostSyncer/claude-plugin",
+  "license": "MIT",
+  "keywords": [
+    "postsyncer",
+    "postsyncer api",
+    "postsyncer mcp",
+    "social media scheduling"
+  ],
+  "logo": "assets/logo.svg",
+  "skills": "skills",
+  "mcpServers": {
+    "postsyncer": {
+      "url": "https://postsyncer.com/mcp"
+    }
+  }
+}

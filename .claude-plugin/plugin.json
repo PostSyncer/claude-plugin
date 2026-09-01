@@ -1,7 +1,7 @@
 {
   "name": "postsyncer",
   "displayName": "PostSyncer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Social media scheduling and analytics from Claude: create, schedule, and repeat posts across X, Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, and Telegram; manage media, campaigns, labels, comments, and performance analytics via the PostSyncer MCP server",
   "author": {
     "name": "PostSyncer",
