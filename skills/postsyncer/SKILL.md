@@ -8,13 +8,7 @@ homepage: https://docs.postsyncer.com
 
 PostSyncer lets you manage social content the same way the PostSyncer app and API do: workspaces, connected social accounts, posts (publish now, schedule, draft, repeat), media library, media folders, labels, campaigns, comment moderation, and performance analytics.
 
-All functionality is provided by the bundled **PostSyncer MCP server** (`https://postsyncer.com/mcp`). The tools mirror PostSyncer's public REST API v1.
-
-## Authentication
-
-The bundled MCP server uses the standard MCP OAuth connector flow. On first use, run `/mcp` in Claude Code and authenticate the `postsyncer` server: a browser window opens, you log in to PostSyncer once, and Claude manages the session from then on.
-
-If a tool returns a 401 error, re-authenticate the `postsyncer` server via `/mcp`, then retry.
+All functionality is provided by the bundled **PostSyncer MCP server** (`https://postsyncer.com/mcp`). The tools mirror PostSyncer's public REST API v1. If the PostSyncer tools are not available, ask the user to connect the `postsyncer` server in `/mcp`.
 
 ## Core workflow
 
