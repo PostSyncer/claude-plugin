@@ -1,6 +1,6 @@
 {
   "name": "postsyncer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Social media scheduling and analytics from Cursor: create, schedule, and repeat posts across X, Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, and Telegram; manage media, campaigns, labels, comments, and performance analytics via the PostSyncer MCP server",
   "author": {
     "name": "PostSyncer",

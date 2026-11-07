@@ -12,12 +12,9 @@ All functionality is provided by the bundled **PostSyncer MCP server** (`https:/
 
 ## Authentication
 
-Two options:
+The bundled MCP server uses the standard MCP OAuth connector flow. On first use, run `/mcp` in Claude Code and authenticate the `postsyncer` server: a browser window opens, you log in to PostSyncer once, and Claude manages the session from then on.
 
-1. **OAuth (recommended)** — the bundled MCP server supports the standard MCP OAuth connector flow. On first use, run `/mcp` in Claude Code and authenticate the `postsyncer` server; a browser window opens, you log in to PostSyncer once, and tokens are managed automatically.
-2. **Bearer token** — a PostSyncer API token (Settings → API in the PostSyncer app) works exactly like API v1. Token abilities map to tool groups: `workspaces`, `accounts`, `labels`, `campaigns`, `posts`. Posts, comments, and analytics tools all require the `posts` ability.
-
-If a tool returns a 401/permission error, authenticate via `/mcp` or check the token's abilities before retrying.
+If a tool returns a 401 error, re-authenticate the `postsyncer` server via `/mcp`, then retry.
 
 ## Core workflow
 
