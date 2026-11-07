@@ -1,7 +1,7 @@
 {
   "name": "postsyncer",
   "displayName": "PostSyncer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Social media scheduling and analytics from Claude: create, schedule, and repeat posts across X, Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, and Telegram; manage media, campaigns, labels, comments, and performance analytics via the PostSyncer MCP server",
   "author": {
     "name": "PostSyncer",
@@ -9,6 +9,7 @@
     "url": "https://github.com/PostSyncer"
   },
   "homepage": "https://docs.postsyncer.com",
+  "privacyPolicyUrl": "https://postsyncer.com/privacy-policy",
   "repository": "https://github.com/PostSyncer/claude-plugin",
   "license": "MIT",
   "keywords": [

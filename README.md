@@ -47,7 +47,7 @@ Install from the [xAI plugin marketplace](https://github.com/xai-org/plugin-mark
 
 ## Authenticate
 
-Sign in with OAuth: run `/mcp` inside Claude Code, select `postsyncer`, and click authenticate. You log in to PostSyncer once in the browser, and Claude stores and refreshes the session for you. There is nothing to paste or keep on your machine.
+Sign in with OAuth: run `/mcp` inside Claude Code, select `postsyncer`, and click authenticate. You log in to PostSyncer once in the browser, and Claude stores and refreshes the session for you.
 
 ## Try it
 
@@ -73,7 +73,9 @@ This plugin ships no scripts, hooks, or local binaries. Its only component besid
 | `https://postsyncer.com/mcp` | The PostSyncer MCP server (Streamable HTTP). All tool calls go here. |
 | `https://postsyncer.com/oauth/*` | OAuth 2.0 sign-in. |
 
-Credentials: only the OAuth grant issued when you sign in, which Claude stores and refreshes. The plugin never reads environment variables, files, or secrets from your machine, and the MCP server only accesses the PostSyncer workspaces the signed-in account can see.
+Sign-in is OAuth only. The MCP server only accesses the PostSyncer workspaces the signed-in account can see.
+
+Privacy policy: https://postsyncer.com/privacy-policy
 
 ## Links
 
