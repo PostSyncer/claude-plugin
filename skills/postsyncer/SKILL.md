@@ -1,6 +1,6 @@
 ---
 name: postsyncer
-description: Schedule, publish, and analyze social media posts with PostSyncer across 11 platforms — X (Twitter), Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, and Telegram. Use for creating or scheduling posts, uploading media, managing campaigns and labels, moderating comments, and reading performance analytics.
+description: Schedule, publish, and analyze social media posts with PostSyncer across 12 platforms — X (Twitter), Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, Telegram, and Google Business Profile. Use for creating or scheduling posts, uploading media, managing campaigns and labels, moderating comments, and reading performance analytics.
 homepage: https://docs.postsyncer.com
 ---
 
@@ -24,6 +24,7 @@ All functionality is provided by the bundled **PostSyncer MCP server** (`https:/
 - **First comment**: to schedule a first comment (link-in-comment pattern), add a content item with `is_first_comment: true` and optional `first_comment_delay` (minutes, default 1). Only Instagram, Facebook, LinkedIn, and YouTube support this — for other platforms put the link in the main caption. Never use `is_first_comment` for X/Twitter threads.
 - **Scheduling**: `schedule_type: "schedule"` requires `schedule_for`. With `publish_now`, the response status `IN_QUEUE` means it is publishing right now — not scheduled for later.
 - **Repeat posting**: `repeatable: true` with `repeatable_times`, `repeatable_gap`, and `repeatable_gap_unit` (`minutes`–`months`); `repeatable_accounts` limits repeats to specific account IDs.
+- **LinkedIn tags (@mentions)**: to tag a person or company in a LinkedIn post, call `find-linkedin-mentions` with the LinkedIn `account_id` the post goes out from and a `query` (a name, or a company's LinkedIn link or short name). Put the chosen result's `text` into the post text exactly as returned; a plain "@Name" typed by hand is not a tag. It finds people and companies the workspace tagged before, the workspace's other LinkedIn profiles, followers of the account's Page, and companies. If `people_search` is `needs_reconnect`, Page followers can't be searched until the account is reconnected in PostSyncer. Other networks in the same post show just the name.
 - **Targeting**: omit `accounts` to use the workspace default account; otherwise pass explicit account IDs from `list-accounts`. Respect workspace boundaries — an account ID belongs to one workspace.
 - **Platform requirements**: TikTok, Instagram, and YouTube require video or image media; text-only posts fail there. Check the account's platform before composing.
 

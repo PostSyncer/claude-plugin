@@ -1,6 +1,6 @@
 # PostSyncer Plugin
 
-Schedule, publish, and analyze social media posts from Claude Code, Claude Cowork, Cursor, and Grok Build — across **11 platforms**: X (Twitter), Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, and Telegram.
+Schedule, publish, and analyze social media posts from Claude Code, Claude Cowork, Cursor, and Grok Build — across **12 platforms**: X (Twitter), Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, Telegram, and Google Business Profile.
 
 The plugin bundles the official **PostSyncer MCP server** (`https://postsyncer.com/mcp`) plus a skill that teaches Claude the full PostSyncer workflow: workspaces, connected accounts, posts (publish now / schedule / draft / repeat), threads, first comments, media library, campaigns, labels, comment moderation, and performance analytics.
 
@@ -61,7 +61,7 @@ Sign in with OAuth: run `/mcp` inside Claude Code, select `postsyncer`, and clic
 
 | Component | Description |
 |---|---|
-| MCP server | Remote HTTP server at `postsyncer.com/mcp` with ~50 tools mirroring PostSyncer REST API v1 |
+| MCP server | Remote HTTP server at `postsyncer.com/mcp` with 60+ tools mirroring PostSyncer REST API v1 |
 | `postsyncer` skill | Workflow guidance: discovery, media prep, posting rules, threads, first comments, scheduling, repeats, analytics, moderation |
 
 ## Network and permissions

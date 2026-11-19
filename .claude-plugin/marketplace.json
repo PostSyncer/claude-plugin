@@ -6,12 +6,12 @@
   },
   "metadata": {
     "description": "PostSyncer social media scheduling and analytics plugin for Claude",
-    "version": "1.0.4"
+    "version": "1.0.5"
   },
   "plugins": [
     {
       "name": "postsyncer",
-      "description": "Social media scheduling and analytics from Claude: create, schedule, and repeat posts across X, Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, and Telegram; manage media, campaigns, labels, comments, and performance analytics via the PostSyncer MCP server",
+      "description": "Social media scheduling and analytics from Claude: create, schedule, and repeat posts across X, Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, Telegram, and Google Business Profile; manage media, campaigns, labels, comments, and performance analytics via the PostSyncer MCP server",
       "source": "./",
       "category": "productivity",
       "strict": false
