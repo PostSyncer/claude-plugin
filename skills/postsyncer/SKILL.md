@@ -31,10 +31,10 @@ Read the brand before you write anything.
 
 ## Posting rules
 
-- **Threads**: several `content` items become a thread on X, Threads, Bluesky and Mastodon. Elsewhere, use one item unless the user wants a thread.
+- **Threads**: several `content` items become a thread on X, Threads, Bluesky and Mastodon. The other networks have no threads: they post the items' text together as one post, with blank lines between them. Make a separate post when a thread won't read well as one.
 - **First comment**: add a content item with `is_first_comment: true` and optional `first_comment_delay` (minutes after publish, default 1). It goes out as a comment on Instagram, Facebook, LinkedIn and YouTube, and as a reply at the end of the thread on X, Threads, Bluesky and Mastodon. TikTok, Pinterest, Telegram and Google Business Profile get no first comment, so put links needed there in the main caption. Mark at most one item, and keep at least one normal item.
-- **Scheduling**: `schedule_type: "schedule"` needs `schedule_for`. `schedule_for.timezone` (an IANA name) sets that post's time only and never changes the workspace's timezone. With `publish_now`, status `IN_QUEUE` means it is publishing right now.
-- **Editing**: with `update-post`, send the full `content` and leave `schedule_type` out unless the user wants to change when the post goes out; the post keeps its time. `draft` takes it off the schedule. Pass `content_version` from `get-post` so you don't overwrite someone else's edit.
+- **Scheduling**: `schedule_type: "schedule"` without `schedule_for` takes the workspace's next free queue time, and is refused when none is free (unless the post goes for approval). `schedule_for.timezone` (an IANA name) sets that post's time only and never changes the workspace's timezone. With `publish_now`, status `IN_QUEUE` means it is publishing right now.
+- **Editing**: with `update-post`, send the full `content` and leave `schedule_type` out unless the user wants to change when the post goes out; the post keeps its time. A scheduled or waiting-for-approval post whose time has passed moves to the next free queue time, or keeps that time when none is free. `draft` takes it off the schedule. Pass `content_version` from `get-post` so you don't overwrite someone else's edit. If the user's role can't publish, a change to a scheduled post, this way or with `draft`, is refused and nothing is saved; with the user's yes, send it again with `schedule_type: "schedule"` to ask for a new approval.
 - **Repeat posting**: set `repeatable: true` with `repeatable_times`, `repeatable_gap` and `repeatable_gap_unit` (`minutes` to `months`). `repeatable_accounts` limits repeats to some account IDs.
 - **Targeting**: leave out `accounts` to use the workspace's default account, or pass account IDs from `list-accounts`. An account belongs to one workspace; keep to workspace boundaries.
 - **Media required**: TikTok, Instagram, YouTube and Pinterest need a photo or video; text-only posts fail there. A Google Business Profile gallery post needs one too.
@@ -79,10 +79,11 @@ Read the brand before you write anything.
 
 - `list-comments` (`post_id`): social comments by default; `source: INTERNAL` for team notes. `needs_reply` marks questions nobody from the workspace answered.
 - `get-comment-summary`: how many comments need a reply, and how many team threads wait on the user.
-- `create-comment`: without `parent_comment_id` it is a team note that stays in PostSyncer. With `parent_comment_id` set to a social comment, the reply goes out on the network. `list-post-people` gives the ids to put in `mentions`.
-- `get-comment`, `update-comment` (author only; it changes PostSyncer's copy, and the network keeps the old words), `delete-comment`.
-- `hide-comment`: Facebook, Instagram, Threads, X and YouTube can hide a comment, and Facebook, Instagram and YouTube can show it again (`hidden: false`). LinkedIn, Bluesky and Mastodon can't hide, so use `delete-comment` there if the user wants it gone. TikTok, Pinterest, Telegram and Google Business Profile can't hide or delete comments. Hiding never deletes.
-- `sync-comments-from-platforms`: pulls new comments from X, LinkedIn, Bluesky, YouTube, Mastodon and Facebook. Instagram and Threads comments arrive as the network sends them; TikTok, Pinterest, Telegram and Google Business Profile comments aren't read. Each row says `synced`, with a `reason` when it wasn't read: `not_published`, `read_recently` (already tried in the last few minutes) or `free_daily_limit` (Free plan, today's X reads are used up; X is read again after midnight UTC).
+- `create-comment`: without `parent_comment_id` it is a team note that stays in PostSyncer, and it can take `mentions`: the user ids from `list-post-people`. With `parent_comment_id` set to a social comment, the reply goes out on the network; it can't take `mentions`.
+- `get-comment`, `update-comment` (author only; it changes PostSyncer's copy, and the network keeps the old words).
+- `delete-comment`: Facebook and Instagram delete a comment from the network, and LinkedIn is asked to. Bluesky and Mastodon delete only the account's own replies: anyone else's stays up, and on Bluesky PostSyncer still marks it deleted, so don't tell the user it was removed. X and Threads hide other people's comments instead (X also hides a reply sent from PostSyncer), and YouTube rejects them, which removes them for good. PostSyncer can't delete TikTok, Pinterest, Telegram or Google Business Profile comments: there the call still answers "Comment deleted successfully" but nothing changes, so don't tell the user it was deleted.
+- `hide-comment`: Facebook, Instagram, Threads, X and YouTube can hide a comment, and Facebook, Instagram and YouTube can show it again (`hidden: false`). LinkedIn, Bluesky and Mastodon can't hide: use `delete-comment` there if the user wants it gone, though on Bluesky and Mastodon it removes only the account's own replies. TikTok, Pinterest, Telegram and Google Business Profile can't hide or delete comments. Hiding never deletes.
+- `sync-comments-from-platforms`: pulls new comments from X, LinkedIn, Bluesky, YouTube, Mastodon and Facebook. Instagram and Threads comments arrive as the network sends them; TikTok, Pinterest, Telegram and Google Business Profile comments aren't read. On those six networks' rows, `synced: true` doesn't mean comments were pulled. Each row says `synced`, with a `reason` when it wasn't read: `not_published`, `read_recently` (already tried in the last few minutes) or `free_daily_limit` (Free plan, today's X reads are used up; X is read again after midnight UTC).
 
 ## Google reviews
 
@@ -93,7 +94,8 @@ Read the brand before you write anything.
 
 ## Analytics
 
-- `get-analytics-summary` (every workspace), `get-analytics-workspace`, `get-analytics-account`, `get-analytics-post`. Pass `start_date` and `end_date` to count only posts published in that range. On Free, the numbers cover the last 7 days. They need `analytics:read`.
+- `get-analytics-summary` (every workspace), `get-analytics-workspace`, `get-analytics-account`: pass `start_date` and `end_date` to count only posts published in that range. On Free, their numbers cover the last 7 days.
+- `get-analytics-post`: how one post did on each network. It takes no dates, and Free doesn't limit it. All analytics tools need `analytics:read`.
 - `sync-post-analytics` refreshes a post's numbers from the networks in the background.
 
 ## Webhooks
