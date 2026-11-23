@@ -2,7 +2,7 @@
 
 Schedule, publish, and analyze social media posts from Claude Code, Claude Cowork, Cursor, and Grok Build — across **12 platforms**: X (Twitter), Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, Telegram, and Google Business Profile.
 
-The plugin bundles the official **PostSyncer MCP server** (`https://postsyncer.com/mcp`) plus a skill that teaches Claude the full PostSyncer workflow: workspaces, connected accounts, posts (publish now / schedule / draft / repeat), threads, first comments, media library, campaigns, labels, comment moderation, and performance analytics.
+The plugin bundles the official **PostSyncer MCP server** (`https://postsyncer.com/mcp`) plus a skill that teaches Claude the full PostSyncer workflow: workspaces and their brand voice, connected accounts, posts (publish now / schedule / draft / repeat), threads, first comments, approvals, media library, saved snippets and hashtag groups, campaigns, labels, comments, Google reviews, webhooks, and performance analytics.
 
 ## Install
 
@@ -21,7 +21,13 @@ claude plugin install postsyncer@postsyncer
 
 ### Cursor
 
-Install from the [Cursor Marketplace](https://cursor.com/marketplace), or clone this repo into `~/.cursor/plugins/local/postsyncer` and run **Developer: Reload Window**. The manifest lives in `.cursor-plugin/plugin.json`.
+Clone this repo into `~/.cursor/plugins/local/postsyncer` and run **Developer: Reload Window**. The manifest lives in `.cursor-plugin/plugin.json`.
+
+To add only the MCP server, open this one-click link in your browser. It opens Cursor's install screen with PostSyncer filled in:
+
+```text
+cursor://anysphere.cursor-deeplink/mcp/install?name=PostSyncer&config=eyJ1cmwiOiJodHRwczovL3Bvc3RzeW5jZXIuY29tL21jcCJ9
+```
 
 ### Codex
 
@@ -29,7 +35,7 @@ Install from the [Cursor Marketplace](https://cursor.com/marketplace), or clone 
 codex plugin marketplace add PostSyncer/claude-plugin
 ```
 
-The Codex manifest lives in `.codex-plugin/plugin.json`; the plugin is also listed in the ChatGPT/Codex plugin directory as **PostSyncer**.
+The Codex manifest lives in `.codex-plugin/plugin.json`. PostSyncer is also in the [plugin directory](https://chatgpt.com/plugins/plugin_asdk_app_6a632759aaf08191bf66f22649ac22cd) that ChatGPT and Codex share.
 
 ### Gemini CLI
 
@@ -43,7 +49,7 @@ Point your client at `https://postsyncer.com/mcp` (Streamable HTTP). The server 
 
 ### Grok Build
 
-Install from the [xAI plugin marketplace](https://github.com/xai-org/plugin-marketplace) (`postsyncer`). The Claude-format manifest in `.claude-plugin/plugin.json` is used as-is.
+Pending in the [xAI plugin marketplace](https://github.com/xai-org/plugin-marketplace) (`postsyncer`). The Claude-format manifest in `.claude-plugin/plugin.json` is used as-is.
 
 ## Authenticate
 
@@ -61,8 +67,8 @@ Sign in with OAuth: run `/mcp` inside Claude Code, select `postsyncer`, and clic
 
 | Component | Description |
 |---|---|
-| MCP server | Remote HTTP server at `postsyncer.com/mcp` with 60+ tools mirroring PostSyncer REST API v1 |
-| `postsyncer` skill | Workflow guidance: discovery, media prep, posting rules, threads, first comments, scheduling, repeats, analytics, moderation |
+| MCP server | Remote HTTP server at `postsyncer.com/mcp` with every PostSyncer API v1 action as a tool (76 today) |
+| `postsyncer` skill | Workflow guidance: brand voice first, discovery, media prep, posting rules, threads, first comments, scheduling, repeats, approvals, snippets, comments, Google reviews, webhooks, analytics, plans |
 
 ## Network and permissions
 
