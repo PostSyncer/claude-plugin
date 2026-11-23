@@ -96,7 +96,7 @@ Read the brand before you write anything.
 
 - `get-analytics-summary` (every workspace), `get-analytics-workspace`, `get-analytics-account`: pass `start_date` and `end_date` to count only posts published in that range. On Free, their numbers cover the last 7 days.
 - `get-analytics-post`: how one post did on each network. It takes no dates, and Free doesn't limit it. All analytics tools need `analytics:read`.
-- `sync-post-analytics` refreshes a post's numbers from the networks in the background.
+- `sync-post-analytics` refreshes a post's numbers from the networks in the background. On Free it reads nothing and answers `skipped: true`.
 
 ## Webhooks
 
