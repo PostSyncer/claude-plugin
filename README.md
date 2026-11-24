@@ -72,12 +72,14 @@ Sign in with OAuth: run `/mcp` inside Claude Code, select `postsyncer`, and clic
 
 ## Network and permissions
 
-This plugin ships no scripts, hooks, or local binaries. Its only component besides the skill file is a remote MCP server:
+This plugin ships no scripts, hooks, or local binaries. Its only component besides the skill file is a remote MCP server. These are the addresses it uses:
 
 | Endpoint | Purpose |
 |---|---|
 | `https://postsyncer.com/mcp` | The PostSyncer MCP server (Streamable HTTP). All tool calls go here. |
 | `https://postsyncer.com/oauth/*` | OAuth 2.0 sign-in. |
+| `https://app.postsyncer.com/upload/*` | An upload link's page, made by the `create-media-upload-link` tool for a file Claude can't pass to PostSyncer. The user opens it in their browser and picks the files to add to their PostSyncer media library. It needs no PostSyncer sign-in, only uploads, and works for 1 hour and up to 10 files. `*` is the link's code. |
+| `https://postsyncer.com/api/media-upload-links/*/files` | Where an upload link takes files. Only in an app that can run commands, like Claude Code, the skill may send the file the user chose here with `curl`, instead of the user opening the page. The file goes to the user's PostSyncer media library and nowhere else. It needs no PostSyncer sign-in; `*` is the link's code. |
 
 Sign-in is OAuth only. The MCP server only accesses the PostSyncer workspaces the signed-in account can see.
 
