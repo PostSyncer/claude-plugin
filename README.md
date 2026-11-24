@@ -67,7 +67,7 @@ Sign in with OAuth: run `/mcp` inside Claude Code, select `postsyncer`, and clic
 
 | Component | Description |
 |---|---|
-| MCP server | Remote HTTP server at `postsyncer.com/mcp` with every PostSyncer API v1 action as a tool (77 today) |
+| MCP server | Remote HTTP server at `postsyncer.com/mcp` with every PostSyncer API v1 action as a tool (79 today) |
 | `postsyncer` skill | Workflow guidance: brand voice first, discovery, media prep, posting rules, threads, first comments, scheduling, repeats, approvals, snippets, comments, Google reviews, webhooks, analytics, plans |
 
 ## Network and permissions
