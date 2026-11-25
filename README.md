@@ -70,6 +70,25 @@ Sign in with OAuth: run `/mcp` inside Claude Code, select `postsyncer`, and clic
 | MCP server | Remote HTTP server at `postsyncer.com/mcp` with every PostSyncer API v1 action as a tool (79 today) |
 | `postsyncer` skill | Workflow guidance: brand voice first, discovery, media prep, posting rules, threads, first comments, scheduling, repeats, approvals, snippets, comments, Google reviews, webhooks, analytics, plans |
 
+## AI features
+
+A few tools pass your request to an AI model that writes the answer. These models are PostSyncer's, not the Claude you are chatting with: PostSyncer runs them on its own account, with Anthropic as its main provider.
+
+- `analyze-twitter-post`: an AI model answers your question about a public X post and its replies.
+- `analyze-video`: an AI model watches a video and returns its transcript, on-screen text, scenes and an answer to your question.
+- `update-post-comment-moderation`: with AI checks or AI replies switched on, an AI model reads a post's new comments and writes the replies.
+- `get-brand`: the brand profile and the weekly learnings it returns are written by an AI model.
+
+## What the tools can change
+
+Most tools only read. These change things in PostSyncer or on your social accounts. The server tells Claude to confirm with you before publishing right away or deleting.
+
+- **Publish and schedule:** `create-post` and `update-post` publish or schedule posts on your connected accounts. `approve-post` publishes or schedules a post that waits for approval. `put-back-account-posts` puts a reconnected account back on its scheduled posts.
+- **Post in public:** `create-comment`, answering a comment from the network, posts a reply there. `reply-to-review` posts a public reply to a Google review and replaces any earlier one. `update-post-auto-plug` posts a follow-up reply once a post reaches a number you set.
+- **Hide and delete:** `hide-comment` hides a comment on its network. Each `delete-*` tool removes what it names for good: posts, media, folders, labels, campaigns, snippets, comments, review replies and webhooks. `delete-account` disconnects a social account.
+- **Comments, brand and settings:** `update-post-comment-moderation` sets rules that hide or delete comments and AI replies. `update-post-contact-collection` adds a post's commenters to a contact list. `update-brand` and the other `update-*` tools change what they name.
+- **Access and outside addresses:** `create-account-connect-link` makes a link where someone connects social accounts to your workspace without a PostSyncer login. `create-webhook`, `update-webhook` and `test-webhook` send events to an https address you choose. `create-media-upload-link` makes an upload page (below).
+
 ## Network and permissions
 
 This plugin ships no scripts, hooks, or local binaries. Its only component besides the skill file is a remote MCP server. These are the addresses it uses:

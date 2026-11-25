@@ -1,8 +1,8 @@
 {
   "name": "postsyncer",
   "displayName": "PostSyncer",
-  "version": "1.2.0",
-  "description": "Social media scheduling and analytics from Claude: create, schedule, and repeat posts across X, Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, Telegram, and Google Business Profile; write in your brand voice; manage media, saved snippets, campaigns, labels, comments, Google reviews, webhooks, and performance analytics via the PostSyncer MCP server",
+  "version": "1.2.1",
+  "description": "Social media scheduling and analytics from Claude: create, schedule, and repeat posts across X, Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, Telegram, and Google Business Profile; write in your brand voice; manage media, saved snippets, campaigns, labels, comments, Google reviews, webhooks, and performance analytics via the PostSyncer MCP server. Some answers (X post and video analysis, AI comment replies, brand text) are written by AI models PostSyncer runs, not by Claude; its main provider is Anthropic",
   "author": {
     "name": "PostSyncer",
     "email": "support@postsyncer.com",
