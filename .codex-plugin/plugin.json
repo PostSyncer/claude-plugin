@@ -1,6 +1,6 @@
 {
   "name": "postsyncer",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Social media scheduling and analytics from Codex: create, schedule, and repeat posts across X, Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, Telegram, and Google Business Profile; write in your brand voice; manage media, saved snippets, campaigns, labels, comments, Google reviews, webhooks, performance analytics, workspaces, your team, notifications, blog-to-social feeds, and products via the PostSyncer MCP server",
   "author": {
     "name": "PostSyncer",
