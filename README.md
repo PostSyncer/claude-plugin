@@ -2,7 +2,7 @@
 
 Schedule, publish, and analyze social media posts from Claude Code, Claude Cowork, Cursor, and Grok Build — across **12 platforms**: X (Twitter), Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, Telegram, and Google Business Profile.
 
-The plugin bundles the official **PostSyncer MCP server** (`https://postsyncer.com/mcp`) plus a skill that teaches Claude the full PostSyncer workflow: workspaces and their brand voice, connected accounts, posts (publish now / schedule / draft / repeat), threads, first comments, approvals, media library, saved snippets and hashtag groups, campaigns, labels, comments, Google reviews, webhooks, and performance analytics.
+The plugin bundles the official **PostSyncer MCP server** (`https://postsyncer.com/mcp`) plus a skill that teaches Claude the full PostSyncer workflow: workspaces, their settings and brand voice, connected accounts, posts (publish now / schedule / draft / repeat), threads, first comments, approvals, media library, saved snippets and hashtag groups, campaigns, labels, comments, Google reviews, webhooks, performance analytics, the team, notifications, blog-to-social feeds and products.
 
 ## Install
 
@@ -62,12 +62,13 @@ Sign in with OAuth: run `/mcp` inside Claude Code, select `postsyncer`, and clic
 - *"Upload these product shots and draft an Instagram carousel with the link in a first comment"*
 - *"How did last week's posts perform across all my workspaces?"*
 - *"Repeat this post every Monday for a month"*
+- *"Invite sam@example.com to my workspace as a Content Creator"*
 
 ## What's included
 
 | Component | Description |
 |---|---|
-| MCP server | Remote HTTP server at `postsyncer.com/mcp` with every PostSyncer API v1 action as a tool (79 today) |
+| MCP server | Remote HTTP server at `postsyncer.com/mcp` with PostSyncer's API v1 actions as tools (116 today) |
 | `postsyncer` skill | Workflow guidance: brand voice first, discovery, media prep, posting rules, threads, first comments, scheduling, repeats, approvals, snippets, comments, Google reviews, webhooks, analytics, plans |
 
 ## AI features
@@ -78,6 +79,7 @@ A few tools pass your request to an AI model that writes the answer. These model
 - `analyze-video`: an AI model watches a video and returns its transcript, on-screen text, scenes and an answer to your question.
 - `update-post-comment-moderation`: with AI checks or AI replies switched on, an AI model reads a post's new comments and writes the replies.
 - `get-brand`: the brand profile and the weekly learnings it returns are written by an AI model.
+- `create-blog-source` and `update-blog-source`: a blog feed's posts are written from each new article by an AI model, from the workspace owner's AI credits, on paid plans.
 
 ## What the tools can change
 
@@ -85,9 +87,14 @@ Most tools only read. These change things in PostSyncer or on your social accoun
 
 - **Publish and schedule:** `create-post` and `update-post` publish or schedule posts on your connected accounts. `approve-post` publishes or schedules a post that waits for approval. `put-back-account-posts` puts a reconnected account back on its scheduled posts.
 - **Post in public:** `create-comment`, answering a comment from the network, posts a reply there. `reply-to-review` posts a public reply to a Google review and replaces any earlier one. `update-post-auto-plug` posts a follow-up reply once a post reaches a number you set.
-- **Hide and delete:** `hide-comment` hides a comment on its network. Each `delete-*` tool removes what it names for good: posts, media, folders, labels, campaigns, snippets, comments, review replies and webhooks. `delete-account` disconnects a social account.
+- **Hide and delete:** `hide-comment` hides a comment on its network. Each `delete-*` tool removes what it names for good: posts, media, folders, labels, campaigns, snippets, comments, review replies, webhooks, workspaces (with their posts, accounts and analytics), API keys, notification channels, blog feeds, products, contacts, contact notes and contact lists. `delete-account` disconnects a social account, and `remove-team-member` takes someone out of a workspace.
 - **Comments, brand and settings:** `update-post-comment-moderation` sets rules that hide or delete comments and AI replies. `update-post-contact-collection` adds a post's commenters to a contact list. `update-brand` and the other `update-*` tools change what they name.
 - **Access and outside addresses:** `create-account-connect-link` makes a link where someone connects social accounts to your workspace without a PostSyncer login. `create-webhook`, `update-webhook` and `test-webhook` send events to an https address you choose. `create-media-upload-link` makes an upload page (below).
+- **Team:** `invite-team-member` emails an invitation to the address you give and makes an account for it when there is none. `update-team-member` changes a role, or emails the invitation again.
+- **Workspaces:** `create-workspace` makes a workspace you own. `update-workspace-settings` changes its name, time zone, posting times and what new posts start with.
+- **Notifications:** `create-notification-connect-link` makes a link to connect Slack, Discord or Telegram. `create-notification-destination` sends the workspace's notifications to a Slack channel, and `test-notification-destination` sends a test message there. `delete-notification-destination` stops them; PostSyncer's Discord webhook then leaves the channel and its bot leaves a Telegram group.
+- **Blog feeds:** `create-blog-source` turns a blog's new articles into posts on the accounts you pick, saved as drafts or scheduled on their own (`DAILY` or `AUTO_QUEUE`).
+- **Contacts, products and your profile:** `update-contact` and `update-contact-lists` change the team's notes and lists, `create-product` and `update-product` change the products posts can promote, and `update-profile` changes your name.
 
 ## Network and permissions
 
