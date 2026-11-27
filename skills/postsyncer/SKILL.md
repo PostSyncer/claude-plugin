@@ -1,7 +1,7 @@
 ---
 name: postsyncer
 description: Schedule, publish, and analyze social media posts with PostSyncer across 12 platforms — X (Twitter), Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, Telegram, and Google Business Profile. Use for writing posts in a workspace's brand voice, creating or scheduling posts, uploading media, saved snippets and hashtag groups, campaigns and labels, comments and Google reviews, webhooks, performance analytics, workspaces and their settings, the team, notifications, blog-to-social feeds and products.
-homepage: https://docs.postsyncer.com
+homepage: https://postsyncer.com/docs
 ---
 
 # PostSyncer
@@ -55,7 +55,7 @@ Read the brand before you write anything.
 ## Media and video
 
 - `list-media`, `get-media`, `delete-media`. `delete-media` fails while the file is on a scheduled, queued or repeating post.
-- **A file the user has** (attached in the chat, or on their computer): when this app can't pass it to PostSyncer, make an upload link. Call `create-media-upload-link` (`workspace_id`, optional `folder_id`) and give the user `url` as a link to click: they open it, with no PostSyncer sign-in, drop the file, and tell you when it's done. In Claude Code, or anywhere you can run commands, send the file yourself instead: `curl -F "file=@clip.mp4" <upload_url>` for a file up to 95 MB, and bigger files in chunks (https://docs.postsyncer.com/guides/files-from-ai-chats#a-bigger-file-in-chunks). Then call `get-media-upload-link` with the link's `id` and put the `media` ids in the post. A link works for 1 hour and takes up to 10 files of up to 500 MB each. Only the create answer has `url` and `upload_url`, so keep them until the upload is done.
+- **A file the user has** (attached in the chat, or on their computer): when this app can't pass it to PostSyncer, make an upload link. Call `create-media-upload-link` (`workspace_id`, optional `folder_id`) and give the user `url` as a link to click: they open it, with no PostSyncer sign-in, drop the file, and tell you when it's done. In Claude Code, or anywhere you can run commands, send the file yourself instead: `curl -F "file=@clip.mp4" <upload_url>` for a file up to 95 MB, and bigger files in chunks (https://postsyncer.com/docs/guides/files-from-ai-chats#a-bigger-file-in-chunks). Then call `get-media-upload-link` with the link's `id` and put the `media` ids in the post. A link works for 1 hour and takes up to 10 files of up to 500 MB each. Only the create answer has `url` and `upload_url`, so keep them until the upload is done.
 - `upload-media-file`: in ChatGPT, the attached file as `file`. Use `file_base64` with `filename` only when you have the file's bytes yourself (for example, read from disk); never retype a file you only see in the chat. Any attached file you can't pass as `file`, whatever its size, goes through an upload link (above).
 - `download-media-from-url`: get the image, video and audio files from any public social post link (Instagram, TikTok, YouTube, Facebook, X and more). Nothing is saved; pass a file link to `upload-media-from-url` to keep it.
 - `analyze-video`: watch a video from a public post link (`url`) or the library (`media_id`) and get its transcript, on-screen text, scenes, hook and an answer to `question`. Watch it instead of asking the user to describe it. Up to 10 minutes; uses AI credits.

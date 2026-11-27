@@ -114,7 +114,7 @@ Privacy policy: https://postsyncer.com/privacy-policy
 ## Links
 
 - Website: https://postsyncer.com
-- Docs: https://docs.postsyncer.com
+- Docs: https://postsyncer.com/docs
 - Support: support@postsyncer.com
 
 ## License

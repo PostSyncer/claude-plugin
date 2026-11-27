@@ -1,14 +1,14 @@
 {
   "name": "postsyncer",
   "displayName": "PostSyncer",
-  "version": "1.3.3",
+  "version": "1.3.4",
   "description": "Social media scheduling and analytics from Claude: create, schedule, and repeat posts across X, Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, Telegram, and Google Business Profile; write in your brand voice; manage media, saved snippets, campaigns, labels, comments, Google reviews, webhooks, performance analytics, workspaces, your team, notifications, blog-to-social feeds, and products via the PostSyncer MCP server. Some answers (X post and video analysis, AI comment replies, brand text, blog feed posts) are written by AI models PostSyncer runs, not by Claude; its main provider is Anthropic",
   "author": {
     "name": "PostSyncer",
     "email": "support@postsyncer.com",
     "url": "https://github.com/PostSyncer"
   },
-  "homepage": "https://docs.postsyncer.com",
+  "homepage": "https://postsyncer.com/docs",
   "privacyPolicyUrl": "https://postsyncer.com/privacy-policy",
   "repository": "https://github.com/PostSyncer/claude-plugin",
   "license": "MIT",
