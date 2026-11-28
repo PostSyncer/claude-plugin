@@ -1,6 +1,6 @@
 # PostSyncer Plugin
 
-Schedule, publish, and analyze social media posts from Claude Code, Claude Cowork, Cursor, Codex, Gemini CLI and Grok Build — across **12 platforms**: X (Twitter), Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, Telegram, and Google Business Profile.
+Schedule, publish, and analyze social media posts from Claude Code, Claude Cowork, Cursor, Codex, Gemini CLI, Grok Build and Grok Bot — across **12 platforms**: X (Twitter), Instagram, Facebook, LinkedIn, TikTok, YouTube, Threads, Bluesky, Mastodon, Pinterest, Telegram, and Google Business Profile.
 
 The plugin bundles the official **PostSyncer MCP server** (`https://postsyncer.com/mcp`) plus a skill that teaches Claude the full PostSyncer workflow: workspaces, their settings and brand voice, connected accounts, posts (publish now / schedule / draft / repeat), threads, first comments, approvals, media library, saved snippets and hashtag groups, campaigns, labels, comments, Google reviews, webhooks, performance analytics, the team, notifications, blog-to-social feeds and products.
 
@@ -50,6 +50,10 @@ Point your client at `https://postsyncer.com/mcp` (Streamable HTTP). The server 
 ### Grok Build
 
 Pending in the [xAI plugin marketplace](https://github.com/xai-org/plugin-marketplace) (`postsyncer`). The Claude-format manifest in `.claude-plugin/plugin.json` is used as-is.
+
+### Grok Bot
+
+In the Grok Bot desktop app, open **Connect apps** and choose **Add a custom connector** at the bottom. Name it `PostSyncer`, pick **Remote HTTPS**, paste `https://postsyncer.com/mcp` as the **Server URL** and choose **Add plugin**. When Grok Bot asks you to authorize PostSyncer, approve it in your browser. If sign-in doesn't finish, choose **Reconnect**.
 
 ## Authenticate
 
