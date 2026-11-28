@@ -72,7 +72,7 @@ Sign in with OAuth: run `/mcp` inside Claude Code, select `postsyncer`, and clic
 
 | Component | Description |
 |---|---|
-| MCP server | Remote HTTP server at `postsyncer.com/mcp` with PostSyncer's API v1 actions as tools (116 today) |
+| MCP server | Remote HTTP server at `postsyncer.com/mcp` with PostSyncer's API v1 actions as tools (119 today) |
 | `postsyncer` skill | Workflow guidance: brand voice first, discovery, media prep, posting rules, threads, first comments, scheduling, repeats, approvals, snippets, comments, Google reviews, webhooks, analytics, plans |
 
 ## AI features
@@ -92,7 +92,7 @@ Most tools only read. These change things in PostSyncer or on your social accoun
 - **Publish and schedule:** `create-post` and `update-post` publish or schedule posts on your connected accounts. `approve-post` publishes or schedules a post that waits for approval. `put-back-account-posts` puts a reconnected account back on its scheduled posts.
 - **Post in public:** `create-comment`, answering a comment from the network, posts a reply there. `reply-to-review` posts a public reply to a Google review and replaces any earlier one. `update-post-auto-plug` posts a follow-up reply once a post reaches a number you set.
 - **Hide and delete:** `hide-comment` hides a comment on its network. Each `delete-*` tool removes what it names for good: posts, media, folders, labels, campaigns, snippets, comments, review replies, webhooks, workspaces (with their posts, accounts and analytics), API keys, notification channels, blog feeds, products, contacts, contact notes and contact lists. `delete-account` disconnects a social account, and `remove-team-member` takes someone out of a workspace.
-- **Comments, brand and settings:** `update-post-comment-moderation` sets rules that hide or delete comments and AI replies. `update-post-contact-collection` adds a post's commenters to a contact list. `update-brand` and the other `update-*` tools change what they name.
+- **Comments, brand and settings:** `update-post-comment-moderation` sets rules that hide or delete comments and AI replies. `update-post-contact-collection` adds a post's commenters to a contact list. `update-account-defaults` sets the settings an account's new posts start from. `update-brand` and the other `update-*` tools change what they name.
 - **Access and outside addresses:** `create-account-connect-link` makes a link where someone connects social accounts to your workspace without a PostSyncer login. `create-webhook`, `update-webhook` and `test-webhook` send events to an https address you choose. `create-media-upload-link` makes an upload page (below).
 - **Team:** `invite-team-member` emails an invitation to the address you give and makes an account for it when there is none. `update-team-member` changes a role, or emails the invitation again.
 - **Workspaces:** `create-workspace` makes a workspace you own. `update-workspace-settings` changes its name, time zone, posting times and what new posts start with.
